@@ -73,9 +73,28 @@ Fecha_de_creacion date not null default current_date,
 Fecha_de_actualizacion date
 );
 
-drop table PRUEBA; /*Elimina una tabla existente*/
+--Elimina una tabla existente
+drop table PRUEBA; 
 
-create table cliente_backup (like cliente including all); /*Crea una tabla identica a otra*/
+--Crea una tabla identica a otra
+create table cliente_backup (like cliente including all); 
+
+select*from cliente_backup;
+
+--Inserta datos a una tabla existente
+insert into cliente_backup (id_cliente, nombre, telefono, correo, fecha_de_creacion, fecha_de_actualizacion, apellido)
+values ('123', 'Mike', '123456', 'kancer@gmail.com', '2023-01-15', '2023-01-15', 'Brevis');
+
+insert into cliente_backup (id_cliente, nombre, telefono, correo, fecha_de_creacion, fecha_de_actualizacion, apellido)
+values ('789', 'Bianca', '56489998', 'bianca@gmail.com', default, '2023-01-15', 'Figueroa');
+
+--TRUNCATE // Especificamente para las tables
+
+truncate table cliente_backup
+
+
+
+
 
 
 
